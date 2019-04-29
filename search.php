@@ -1,6 +1,6 @@
 <?php
     require('connect_db.php');
-    $sql_text = "SELECT * FROM linebot WHERE keyword LIKE '%a%'";
+    $sql_text = "SELECT * FROM linebot WHERE keyword LIKE '%b%'";
     $query = mysqli_query($conn,$sql_text);
     while($objresult = mysqli_fetch_assoc($query))
     {
