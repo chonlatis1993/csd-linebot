@@ -3,6 +3,6 @@
     $user = 'bca00ec7295698';
     $pass = '6db4fcae';
     $db = 'gcp_554dcbf9bb5e3298f5b6';
-    $conn = new mysqli ($host,$user,$pass);
+    $conn = new mysqli ($host,$user,$pass,$db);
     mysqli_query($conn, "SET NAME utf8");
 ?>
