@@ -1,6 +1,7 @@
-function render_card()
+function test()
 {
-    var = document.getElementById("")
+    var office = document.getElementById('office_select').value;
+    alert(office);
 }
 function search()
 {
