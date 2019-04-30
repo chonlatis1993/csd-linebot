@@ -44,4 +44,4 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
         }
     }
 }
-echo "BOT OK";
+echo "Your Computers are already on virus, Fuck you";
