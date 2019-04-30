@@ -5,7 +5,7 @@ function reply_msg($txtin,$replyToken)//สร้างข้อความแ�
     $messages = ['type' => 'text','text' => $txtin];//สร้างตัวแปร 
     $url = 'https://api.line.me/v2/bot/message/reply';
     $data = [
-                'replyToken' => $replyToken,
+                'replytoken' => $replytoken,
                 'messages' => [$messages],
             ];
     $post = json_encode($data);
