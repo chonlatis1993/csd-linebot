@@ -34,7 +34,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $replyToken = $event['replyToken']; //เก็บ reply token เอาไว้ตอบกลับ
             $source_type = $event['source']['type'];//เก็บที่มาของ event(user หรือ group)
             $txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin
-            $sql_text = "SELECT * FROM linebot WHERE keyword LIKE '%$txtin%'";
+            $sql_text = "SELECT * FROM linebot WHERE answer LIKE '%$txtin%'";
             $query = mysqli_query($conn,$sql_text);
             while($obj = mysqli_fetch_assoc($query))            
             {
