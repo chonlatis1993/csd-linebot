@@ -36,8 +36,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin
             $sql_text = "SELECT * FROM linebot WHERE keyword LIKE '%$txtin%'";
             $query = mysqli_query($conn,$sql_text);
-            while($obj = mysqli_fetch_assoc($query))
-            
+            while($obj = mysqli_fetch_assoc($query))            
             {
                 $txtback = $txtback." \n".$obj["equip_name"];
             }
