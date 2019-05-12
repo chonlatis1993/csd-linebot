@@ -17,7 +17,7 @@
 				<!-- Brand/logo -->
 				<a class="navbar-brand font-weight-bold" href="#!">
 					<img src="assets/images/pea-logo.png" alt="logo" style="width:100px;">
-					ค้นหาข้อมูลอุปกรณ์
+					สถานะเบอร์โทรศัพท์
 				</a>
 			</nav>
 		</header>
