@@ -10,6 +10,7 @@
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="liff_search.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Sarabun|Roboto" rel="stylesheet">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/images/pea-logo.png" />
 	</head>
 	<body>
 		<header style="margin-bottom: 70px;">
