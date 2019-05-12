@@ -28,15 +28,12 @@
 						<div class="form-group">
 							<select class="form-control" id="office_select">
 								<option selected disabled>--เลือกหน่วยงาน--</option>
-								<option value="j091">กฟอ.พธร.</option>
-								<option value="j092">กฟส.บางแพ</option>
-								<option value="j093">กฟส.ดำเนินสะดวก</option>
-								<option value="j094">กฟส.ดอนไผ่</option>
+								<option value="j091">กฟต.1</option>
+								<option value="j092">กฟจ.</option>
+								<option value="j093">กฟจ.</option>
+								<option value="j094">กฟจ.</option>
 							</select>
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="คำค้นหา" id="keyword">
-						</div>
+						</div>						
 						<div class="form-group">
 							<button type="button" class="btn btn-primary btn-block" onclick="search()">ค้นหา</button>
 						</div>
