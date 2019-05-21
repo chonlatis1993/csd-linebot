@@ -29,10 +29,14 @@
 						<div class="form-group">
 							<select class="form-control" id="office_select">
 								<option selected disabled>--เลือกหน่วยงาน--</option>
-								<option value="j091">กฟต.1</option>
-								<option value="j092">กฟจ.</option>
-								<option value="j093">กฟจ.</option>
-								<option value="j094">กฟจ.</option>
+								<option value="j091">ทั้งหมด</option>
+								<option value="j092">กฟข.</option>
+								<option value="j093">กฟจ.พบ.</option>
+								<option value="j094">กฟจ.รบ.</option>
+								<option value="j095">กฟจ.สส.</option>
+								<option value="j096">กฟจ.ปข.</option>
+								<option value="j097">กฟจ.ชพ.</option>
+								<option value="j098">กฟจ.รน.</option>
 							</select>
 						</div>						
 						<div class="form-group">
