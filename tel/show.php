@@ -3,7 +3,7 @@
 <meta http-equiv="refresh" content="3">
 </head> 
 <body>
-<?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -35,6 +35,6 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 $conn->close();
-?>
+
 </body>
 </html>
