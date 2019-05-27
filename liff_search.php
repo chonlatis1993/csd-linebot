@@ -23,7 +23,7 @@
 		</header>
 		<main>
 			<div class="container mt-2">
-				<div clas="row row-center">
+				<div class="row row-center">
 					<div class="col-lg-12">
 						<div class="form-group">
 							<select class="form-control" id="office_select">
