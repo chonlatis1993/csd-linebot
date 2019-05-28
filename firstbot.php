@@ -16,7 +16,6 @@ function reply_msg($txtin,$replyToken)//สร้างข้อความแ�
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($ch, CURLOPT_ENCODING => "",);
     $result = curl_exec($ch);
     curl_close($ch);
     echo $result;
