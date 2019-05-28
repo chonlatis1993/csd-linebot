@@ -9,7 +9,7 @@ function reply_msg($txtin,$replyToken)//สร้างข้อความแ�
                 'messages' => [$messages],
             ];
     $post = json_encode($data);
-    $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token,"content-type: application/json; charset=UTF-8");
+    $headers = array('Content-Type: application/json; charset=UTF-8', 'Authorization: Bearer ' . $access_token,);
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
