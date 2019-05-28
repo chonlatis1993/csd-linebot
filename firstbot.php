@@ -18,7 +18,7 @@ function reply_msg($txtin,$replyToken)//สร้างข้อความแ�
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
     $result = curl_exec($ch);
     curl_close($ch);
-    echo $result . "\r";
+    echo $result;
 }
 
 // รับข้อมูล
