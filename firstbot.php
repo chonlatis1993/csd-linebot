@@ -81,7 +81,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             {
                 $txtback = $txtback."\n".$obj["answer"];
             }
-            sentMessage($txtback,$replyToken);      
+            reply_msg($txtback,$replyToken);      
         }
     }
 }
