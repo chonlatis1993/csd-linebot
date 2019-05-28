@@ -18,13 +18,14 @@ function reply_msg($txtin,$replyToken)//สร้างข้อความแ�
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
     $result = curl_exec($ch);
     curl_close($ch);
-    echo $result . "\r\n";
+    echo $result . "\r";
 }
 
 // รับข้อมูล
 require('connect_db.php');
 $content = file_get_contents('php://input');//รับข้อมูลจากไลน์
 $events = json_decode($content, true);//แปลง json เป็น php
+
 file_put_contents('log.txt',file_get_contents('php://input') . PHP_EOL,$events,FILE_APPEND); //สร้างไฟล์ log
 if (!is_null($events['events'])) //check ค่าในตัวแปร $events
 {
