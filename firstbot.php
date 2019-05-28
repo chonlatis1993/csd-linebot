@@ -38,10 +38,12 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $query = mysqli_query($conn,$sql_text);
             while($obj = mysqli_fetch_assoc($query))            
             {
-                $txtback = $txtback."\n".$obj["answer","ans"];
+                $txtback = $txtback."\n".$obj["answer"];
             }
-            
-            reply_msg($txtback,$replyToken);      
+            {
+                $txtback2 = $txtback2."\n".$obj["ans"];
+            }
+            reply_msg($txtback,$txtback2,$replyToken);      
         }
     }
 }
