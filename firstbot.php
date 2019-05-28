@@ -40,10 +40,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             {
                 $txtback = $txtback."\n".$obj["answer"];
             }
-            {
-                $txtback2 = $txtback2."\n".$obj["ans"];
-            }
-            reply_msg($txtback,$txtback2,$replyToken);      
+           reply_msg($txtback,$txtback2,$replyToken);      
         }
     }
 }
