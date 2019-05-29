@@ -3,7 +3,7 @@
 	</head>
     <center>
 	<body>
-		<header style="margin-bottom: 70px;">
+		<header style="margin-bottom: 100px;">
 			<nav class="shadow-sm navbar fixed-top navbar-light bg-white">
 				<!-- Brand/logo -->
 				<a class="navbar-brand font-weight-bold" href="#!">

@@ -9,7 +9,7 @@ function reply_msg($txtin,$replyToken)//สร้างข้อความแ�
                 'messages' => [$messages],
             ];
     $post = json_encode($data);
-    $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+    $headers = array('Content-Type: application/json; charset=UTF-8', 'Authorization: Bearer ' . $access_token,);
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -18,14 +18,55 @@ function reply_msg($txtin,$replyToken)//สร้างข้อความแ�
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
     $result = curl_exec($ch);
     curl_close($ch);
-    echo $result . "\r\n";
+    echo $result;
 }
+function sentMessage($encodeJson,$datas)
+	{
+		$datasReturn = [];
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+		  CURLOPT_URL => $datas['url'],
+		  CURLOPT_RETURNTRANSFER => true,
+		  CURLOPT_ENCODING => "",
+		  CURLOPT_MAXREDIRS => 10,
+		  CURLOPT_TIMEOUT => 30,
+		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  CURLOPT_CUSTOMREQUEST => "POST",
+		  CURLOPT_POSTFIELDS => $encodeJson,
+		  CURLOPT_HTTPHEADER => array(
+		    "authorization: Bearer ".$datas['token'],
+		    "cache-control: no-cache",
+		    "content-type: application/json; charset=UTF-8",
+		  ),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		if ($err) {
+		    $datasReturn['result'] = 'E';
+		    $datasReturn['message'] = $err;
+		} else {
+		    if($response == "{}"){
+			$datasReturn['result'] = 'S';
+			$datasReturn['message'] = 'Success';
+		    }else{
+			$datasReturn['result'] = 'E';
+			$datasReturn['message'] = $response;
+		    }
+		}
+
+		return $datasReturn;
+	}
 
 // รับข้อมูล
 require('connect_db.php');
 $content = file_get_contents('php://input');//รับข้อมูลจากไลน์
 $events = json_decode($content, true);//แปลง json เป็น php
-file_put_contents('log.txt',$events,FILE_APPEND); //สร้างไฟล์ log
+
+file_put_contents('log.txt',file_get_contents('php://input') . PHP_EOL,$events,FILE_APPEND); //สร้างไฟล์ log
 if (!is_null($events['events'])) //check ค่าในตัวแปร $events
 {
     foreach ($events['events'] as $event) {
@@ -38,7 +79,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $query = mysqli_query($conn,$sql_text);
             while($obj = mysqli_fetch_assoc($query))            
             {
-                $txtback = $txtback." \n".$obj["answer"];
+                $txtback = $txtback."\n".$obj["answer"];
             }
             reply_msg($txtback,$replyToken);      
         }
